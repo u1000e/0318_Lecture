@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>나는 사실 안나옴</title>
+<title>핫하 내가 메인이닷</title>
 </head>
 <body>
-
-	<jsp:forward page="WEB-INF/views/main_page.jsp" />
-
+	<jsp:include page="include/header.jsp" />
+	
+	<div style="height : 500px"></div>
+	
+	<jsp:include page="include/footer.jsp" />
 </body>
 </html>
