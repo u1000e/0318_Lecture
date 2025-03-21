@@ -1,6 +1,6 @@
 package com.kh.spring.board.model.service;
 
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,7 +18,7 @@ public interface BoardService {
 	 */
 	
 	// 게시글 목록조회
-	List<BoardDTO> selectBoardList(int currentPage); 
+	Map<String, Object> selectBoardList(int currentPage); 
 	/*
 	 * selectBoardList();
 	 * selectAll();
