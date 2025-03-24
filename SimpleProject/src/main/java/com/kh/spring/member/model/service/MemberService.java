@@ -26,6 +26,9 @@ public interface MemberService { // <- 계약서
 	
 	// 아이디 중복체크
 	
+	String idCheck(String memberId);
+	
+	
 	// 2절
 	
 	// 이메일인증....시간없는데..가능???가능함??? 가능하면함 3절은 시간되면함

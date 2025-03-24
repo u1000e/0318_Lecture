@@ -133,5 +133,30 @@ public class MemberServiceImpl implements MemberService {
 	public int delete(MemberDTO member) {
 		return 0;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public String idCheck(String memberId) {
+		return memberMapper.idCheck(memberId) != null ? "NNNNY" : "NNNNN";
+	}
 
 }
