@@ -1,9 +1,17 @@
 package com.kh.spring.ajax;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.kh.spring.board.model.dto.BoardDTO;
+import com.kh.spring.board.model.service.BoardService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,6 +41,43 @@ public class AjaxController {
 		log.info("AJAX요청을 통해 넘어온 VALUE값 : {}", value);
 		String returnValue = value.equals("admin") ? "아이디 있어요" : "아이디 없어요";
 		return returnValue;
+	}
+	
+	
+	private final BoardService boardService;
+	
+	@Autowired
+	public AjaxController(BoardService boardService) {
+		this.boardService = boardService;
+	}
+	
+	@ResponseBody
+	@GetMapping(value = "study", produces="application/json; charset=UTF-8")
+	public BoardDTO ajaxStudy(@RequestParam("replyNo") int boardNo) {
+		/*
+		 * DTO의 목적 == 테이블의 행에 있는 컬럼의 값을 필드에 담아옴 
+		 * 
+		 * BOARDDTO
+		 * 
+		 * boardTitle == 머시기
+		 * boardContent == 머시기
+		 * boardWriter == 머시기
+		 * {
+		 * 	"boardTitle" : "제목",
+		 *  "boardContent" : "내용"
+		 * }
+		 * 
+		 */
+		//BoardDTO board = 
+		/*
+		log.info("{}", board);
+		Map<String, String> map = new HashMap();
+		map.put("boardTitle", board.getBoardTitle());
+		map.put("boardContent", board.getBoardContent());
+		map.put("boardWriter", board.getBoardWriter());
+		log.info(" 조회한거 JavaScript의 객체모양으로 만들기 : {}", map);
+		*/
+		return boardService.selectBoard(boardNo);
 	}
 	
 	

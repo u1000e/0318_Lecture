@@ -27,7 +27,7 @@
 <body>
     
     <jsp:include page="../include/header.jsp" />
-
+    
     <div class="content">
         <br><br>
         <div class="innerOuter">
